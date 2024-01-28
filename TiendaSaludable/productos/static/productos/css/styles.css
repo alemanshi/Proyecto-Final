@@ -1,0 +1,13 @@
+/* Estilos para h1 */
+h1 {
+    text-align: center; /* Centra el texto en el elemento h1 */
+    font-size: 1em; /* Tamaño de fuente 1em para el elemento h1 */
+}
+
+body {
+    background-color: #21f306; /* Establece el color de fondo del cuerpo de la página en verde (#21f306) */
+}
+
+p {
+    margin: 25px; /* Establece un margen de 25 píxeles alrededor de los elementos de párrafo (p) */
+}

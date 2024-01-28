@@ -1,0 +1,13 @@
+<!--productos/templates/productos/login.html -->
+{% extends 'productos/html_base.html' %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+    <h2>Iniciar Sesión</h2>
+    <form method="post" action="{% url 'productos:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+{% endblock %}

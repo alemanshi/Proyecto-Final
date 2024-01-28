@@ -1,0 +1,12 @@
+<!-- productos/templates/productos/logout.html -->
+
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <h2>Cerrar Sesión</h2>
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+      </form>
+      <button id="cancelLogout">Cancelar</button>
+    </div>
+</div>

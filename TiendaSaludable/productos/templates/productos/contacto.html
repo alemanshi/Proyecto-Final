@@ -1,0 +1,19 @@
+{% extends 'productos/html_base.html' %}
+
+{% block title %}Tienda Saludable - Contacto{% endblock %}
+
+{% block content %}
+    <!-- Encabezado de la página -->
+    <h1>Contacto</h1>
+    
+    <!-- Formulario de contacto con método POST y acción correspondiente a la vista de contacto -->
+    <form method="post" action="{% url 'productos:contacto' %}">
+        {% csrf_token %} <!-- Token CSRF para protección contra ataques CSRF -->
+        
+        <!-- Renderiza el formulario como párrafos -->
+        {{ form.as_p }}
+        
+        <!-- Botón de envío del formulario -->
+        <button type="submit">Enviar</button>
+    </form>
+{% endblock %}

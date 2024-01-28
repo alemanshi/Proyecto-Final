@@ -1,0 +1,31 @@
+{% extends 'productos/html_base.html' %}
+
+{% block content %}
+  <!-- Encabezado de la página -->
+  <h1>Lista de Artículos</h1>
+  
+  <!-- Lista de artículos utilizando un bucle for -->
+  <ul>
+    {% for articulo in articulos %}
+      <li>
+        <!-- Detalles del artículo -->
+        <strong>{{ articulo.nombre }}</strong><br>
+        Descripción: {{ articulo.descripcion }}<br>
+        Precio: ${{ articulo.precio }}<br>
+        Categoria: {{ articulo.categoria }}<br>
+        Stock: {{ articulo.disponible }}<br>
+        
+        <!-- Formulario para agregar el artículo al carrito -->
+        <form method="post" action="{% url 'productos:agregar_al_carrito' articulo.id %}">
+          {% csrf_token %}
+          <input type="submit" value="Agregar al carrito">
+        </form>
+        
+        {% if not user.is_authenticated %}
+          <!-- Mensaje si el usuario no ha iniciado sesión -->
+          <p>Debes iniciar sesión para agregar artículos al carrito.</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
